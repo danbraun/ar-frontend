@@ -1,0 +1,17 @@
+{
+    "name": "Gulp Sass template",
+    "version": "1.0.0",
+    "description": "Starter template for local dev with sass",
+    "main": "scripts.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "gulp": "^4.0.2",
+        "gulp-less": "^5.0.0",
+        "gulp-sass": "^5.1.0",
+        "sass": "^1.48.0"
+    }
+}

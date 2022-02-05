@@ -1,0 +1,88 @@
+.no-padding {
+  padding: 0;
+}
+header {
+  position: relative;
+  background: lightblue;
+  margin-bottom: -6rem;
+  z-index: -1;
+  .grid-container {
+    height: 612px;
+    display: grid;
+    align-items: center;
+  }
+  .heading {
+    max-width: 180px;
+  }
+  img {
+    border-left: 2rem solid white;
+    height: 612px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    max-width: 65%;
+    object-fit: cover;
+  }
+  @media (max-width: 768px) {
+    .grid-container {
+      display: none;
+    }
+    img {
+      border: none;
+      position: relative;
+      max-width: 100%;
+    }
+  }
+}
+header .icon, main .icon {
+  width: 96px;
+  height: 80px;
+  background: black;
+}
+main.container {
+  padding: 5rem 5rem 0;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  column-gap: 2rem;
+  .mobile-heading {
+    display: none;
+  }
+  aside {
+    width: 400px;
+    padding: 2em;
+    font-size: 28px;
+    background: lightgray;
+  }
+}
+
+@media (max-width: 1024px) {
+  main.container {
+    display: block;
+    padding: 2rem 2rem 0;
+    
+    aside {
+      display: none;
+    }
+  }
+}
+@media (max-width: 768px) {
+  main.container .mobile-heading {
+    display: block;
+  }
+}
+.btn.btn-primary {
+  position: relative;
+  padding-right: 2em;
+}
+.btn.btn-primary::after {
+  position: absolute;
+  content: url('/images/double-arrows.svg');
+  right: 5px;
+  width: 20px;
+  height: 20px;
+  svg {
+    fill: white;
+  }
+}
