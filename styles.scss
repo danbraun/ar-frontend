@@ -3,6 +3,19 @@
 @import './node_modules/@fortawesome/fontawesome-free/scss/regular.scss';
 @import './node_modules/@fortawesome/fontawesome-free/scss/solid.scss';
 @import './node_modules/@fortawesome/fontawesome-free/scss/v4-shims.scss';
+@import './fonts.scss';
+* {
+  font-family: "FreightSans Pro", "Comic Sans MS";
+}
+p {
+  font-family: "Adelle PE", "Comic Sans MS";
+}
+h1 {
+  font-family: "FreightSans Pro";
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 1em;
+}
 .no-padding {
   padding: 0;
 }
