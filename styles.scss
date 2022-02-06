@@ -35,7 +35,8 @@ header {
     }
   }
 }
-header .icon, main .icon {
+header .icon,
+main .icon {
   width: 96px;
   height: 80px;
   background: black;
@@ -61,7 +62,7 @@ main.container {
   main.container {
     display: block;
     padding: 2rem 2rem 0;
-    
+
     aside {
       display: none;
     }
@@ -78,11 +79,104 @@ main.container {
 }
 .btn.btn-primary::after {
   position: absolute;
-  content: url('/images/double-arrows.svg');
+  content: url("/images/double-arrows.svg");
   right: 5px;
   width: 20px;
   height: 20px;
   svg {
     fill: white;
+  }
+}
+
+/*******************************************
+
+  OUR GRANTMAKING
+
+********************************************/
+
+.four-squares {
+  display: grid;
+  grid-template-columns: 300px 300px;
+  gap: 1rem;
+
+  .four-squares-card {
+    padding: 2em;
+    overflow: hidden;
+    width: 300px;
+    height: 270px;
+    border: 8px red solid;
+    position: relative;
+    .title {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 1em;
+    }
+    .summary {
+      font-size: 12px;
+      margin-bottom: 1em;
+    }
+   
+  }
+  .four-squares-card::after {
+    position: absolute;
+    content: '';
+    width: 100px;
+    height: 100px;
+    background: red;
+    display: block;
+    border-radius: 50px;
+    transition: transform 220ms ease-out;
+  }
+  .four-squares-card:hover::after {
+    transform: scale(1.2);
+  }
+  .four-squares-card:nth-child(1) {
+    &::after {
+      bottom: -58px;
+      right: -58px;
+    }
+  }
+  .four-squares-card:nth-child(2) {
+    border-color: green;
+    &::after {
+      bottom: -58px;
+      left: -58px;
+      background: green;
+    }
+  }
+  .four-squares-card:nth-child(3) {
+    border-color: blue;
+    &::after {
+      top: -58px;
+      right: -58px;
+      background: blue;
+    }
+  }
+  .four-squares-card:nth-child(4) {
+    border-color: orange;
+    &::after {
+      top: -58px;
+      left: -58px;
+      background: orange;
+      
+    }
+    
+  }
+}
+a.learn-more {
+      
+  position: relative;
+  &::after {
+    position: absolute;
+    right: 0;
+    display: block;
+    content: url('images/double-arrows.svg');
+    width: 14px;
+    bottom: -6px;
+    right: -18px;
+    transition: right 250ms ease-out;
+  }
+  &:hover::after {
+    right: -24px;
   }
 }

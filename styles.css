@@ -37,7 +37,8 @@ header img {
   }
 }
 
-header .icon, main .icon {
+header .icon,
+main .icon {
   width: 96px;
   height: 80px;
   background: black;
@@ -88,4 +89,90 @@ main.container aside {
 }
 .btn.btn-primary::after svg {
   fill: white;
+}
+
+/*******************************************
+
+  OUR GRANTMAKING
+
+********************************************/
+.four-squares {
+  display: grid;
+  grid-template-columns: 300px 300px;
+  gap: 1rem;
+}
+.four-squares .four-squares-card {
+  padding: 2em;
+  overflow: hidden;
+  width: 300px;
+  height: 270px;
+  border: 8px red solid;
+  position: relative;
+}
+.four-squares .four-squares-card .title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 1em;
+}
+.four-squares .four-squares-card .summary {
+  font-size: 12px;
+  margin-bottom: 1em;
+}
+.four-squares .four-squares-card::after {
+  position: absolute;
+  content: "";
+  width: 100px;
+  height: 100px;
+  background: red;
+  display: block;
+  border-radius: 50px;
+  transition: transform 220ms ease-out;
+}
+.four-squares .four-squares-card:hover::after {
+  transform: scale(1.2);
+}
+.four-squares .four-squares-card:nth-child(1)::after {
+  bottom: -58px;
+  right: -58px;
+}
+.four-squares .four-squares-card:nth-child(2) {
+  border-color: green;
+}
+.four-squares .four-squares-card:nth-child(2)::after {
+  bottom: -58px;
+  left: -58px;
+  background: green;
+}
+.four-squares .four-squares-card:nth-child(3) {
+  border-color: blue;
+}
+.four-squares .four-squares-card:nth-child(3)::after {
+  top: -58px;
+  right: -58px;
+  background: blue;
+}
+.four-squares .four-squares-card:nth-child(4) {
+  border-color: orange;
+}
+.four-squares .four-squares-card:nth-child(4)::after {
+  top: -58px;
+  left: -58px;
+  background: orange;
+}
+
+a.learn-more {
+  position: relative;
+}
+a.learn-more::after {
+  position: absolute;
+  right: 0;
+  display: block;
+  content: url("images/double-arrows.svg");
+  width: 14px;
+  bottom: -6px;
+  right: -18px;
+  transition: right 250ms ease-out;
+}
+a.learn-more:hover::after {
+  right: -24px;
 }
