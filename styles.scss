@@ -1,3 +1,8 @@
+@import './node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import './node_modules/@fortawesome/fontawesome-free/scss/brands.scss';
+@import './node_modules/@fortawesome/fontawesome-free/scss/regular.scss';
+@import './node_modules/@fortawesome/fontawesome-free/scss/solid.scss';
+@import './node_modules/@fortawesome/fontawesome-free/scss/v4-shims.scss';
 .no-padding {
   padding: 0;
 }
@@ -96,6 +101,7 @@ main.container {
 
 .four-squares {
   display: grid;
+  justify-content: center;
   grid-template-columns: 300px 300px;
   gap: 1rem;
 
@@ -125,10 +131,22 @@ main.container {
     background: red;
     display: block;
     border-radius: 50px;
-    transition: transform 220ms ease-out;
+    // transition: transform 220ms ease-out;
   }
   .four-squares-card:hover::after {
-    transform: scale(1.2);
+    // transform: scale(1.2);
+    animation: scaling 500ms ease-in-out 1;
+  }
+  @keyframes scaling {
+    0% {
+      transform: scale(1.0);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    to {
+      transform: scale(1.0);
+    }
   }
   .four-squares-card:nth-child(1) {
     &::after {
@@ -170,9 +188,12 @@ a.learn-more {
     position: absolute;
     right: 0;
     display: block;
-    content: url('images/double-arrows.svg');
-    width: 14px;
-    bottom: -6px;
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900;
+    content: "\f101";
+    font-size: 14px;
+    color: red;
+    bottom: -4px;
     right: -18px;
     transition: right 250ms ease-out;
   }
@@ -180,3 +201,4 @@ a.learn-more {
     right: -24px;
   }
 }
+
