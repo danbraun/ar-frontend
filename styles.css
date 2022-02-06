@@ -9020,6 +9020,26 @@ main.container aside {
   font-size: 12px;
   margin-bottom: 1em;
 }
+.four-squares .four-squares-card a.learn-more {
+  color: red;
+  position: relative;
+}
+.four-squares .four-squares-card a.learn-more::after {
+  position: absolute;
+  right: 0;
+  display: block;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "";
+  font-size: 14px;
+  color: red;
+  bottom: -4px;
+  right: -18px;
+  transition: right 250ms ease-out;
+}
+.four-squares .four-squares-card a.learn-more:hover::after {
+  right: -24px;
+}
 .four-squares .four-squares-card::after {
   position: absolute;
   content: "";
@@ -9072,22 +9092,11 @@ main.container aside {
   background: orange;
 }
 
-a.learn-more {
-  position: relative;
-}
-a.learn-more::after {
-  position: absolute;
-  right: 0;
-  display: block;
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  content: "";
-  font-size: 14px;
-  color: red;
-  bottom: -4px;
-  right: -18px;
-  transition: right 250ms ease-out;
-}
-a.learn-more:hover::after {
-  right: -24px;
+@media (max-width: 768px) {
+  .four-squares {
+    grid-template-columns: 300px;
+  }
+  .four-squares .four-squares-card::after {
+    display: none;
+  }
 }

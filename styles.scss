@@ -121,7 +121,26 @@ main.container {
       font-size: 12px;
       margin-bottom: 1em;
     }
-   
+    a.learn-more {
+      color: red;
+      position: relative;
+      &::after {
+        position: absolute;
+        right: 0;
+        display: block;
+        font-family: "Font Awesome 5 Free"; 
+        font-weight: 900;
+        content: "\f101";
+        font-size: 14px;
+        color: red;
+        bottom: -4px;
+        right: -18px;
+        transition: right 250ms ease-out;
+      }
+      &:hover::after {
+        right: -24px;
+      }
+    }
   }
   .four-squares-card::after {
     position: absolute;
@@ -181,24 +200,12 @@ main.container {
     
   }
 }
-a.learn-more {
-      
-  position: relative;
-  &::after {
-    position: absolute;
-    right: 0;
-    display: block;
-    font-family: "Font Awesome 5 Free"; 
-    font-weight: 900;
-    content: "\f101";
-    font-size: 14px;
-    color: red;
-    bottom: -4px;
-    right: -18px;
-    transition: right 250ms ease-out;
-  }
-  &:hover::after {
-    right: -24px;
+@media (max-width: 768px) {
+  .four-squares {
+    grid-template-columns: 300px;
+    .four-squares-card::after {
+      display: none;
+    }
   }
 }
 
