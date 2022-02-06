@@ -137,6 +137,9 @@ main.container {
     a.learn-more {
       color: red;
       position: relative;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: blue;
       &::after {
         position: absolute;
         right: 0;
@@ -144,7 +147,7 @@ main.container {
         font-family: "Font Awesome 5 Free"; 
         font-weight: 900;
         content: "\f101";
-        font-size: 14px;
+        font-size: 16px;
         color: red;
         bottom: -2px;
         right: -18px;

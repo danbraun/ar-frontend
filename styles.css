@@ -9092,6 +9092,9 @@ main.container aside {
 .four-squares .four-squares-card a.learn-more {
   color: red;
   position: relative;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: blue;
 }
 .four-squares .four-squares-card a.learn-more::after {
   position: absolute;
@@ -9100,7 +9103,7 @@ main.container aside {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "";
-  font-size: 14px;
+  font-size: 16px;
   color: red;
   bottom: -2px;
   right: -18px;
