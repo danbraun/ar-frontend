@@ -8986,7 +8986,7 @@ header .grid-container {
 header .heading {
   max-width: 180px;
 }
-header img {
+header img.half-header {
   border-left: 2rem solid white;
   height: 612px;
   position: absolute;
@@ -9000,7 +9000,7 @@ header img {
   header .grid-container {
     display: none;
   }
-  header img {
+  header img.half-header {
     border: none;
     position: relative;
     max-width: 100%;
@@ -9014,17 +9014,24 @@ main .icon {
   background: black;
 }
 
-main.container {
+.one-column {
+  padding: 5rem 5rem 0;
+  background-color: white;
+}
+
+.two-column {
   padding: 5rem 5rem 0;
   background-color: white;
   display: grid;
   grid-template-columns: 2fr 1fr;
   column-gap: 2rem;
 }
-main.container .mobile-heading {
+
+.mobile-heading {
   display: none;
 }
-main.container aside {
+
+aside {
   width: 400px;
   padding: 2em;
   font-size: 28px;
@@ -9032,16 +9039,16 @@ main.container aside {
 }
 
 @media (max-width: 1024px) {
-  main.container {
+  .one-column, .two-column {
     display: block;
     padding: 2rem 2rem 0;
   }
-  main.container aside {
+  .one-column aside, .two-column aside {
     display: none;
   }
 }
 @media (max-width: 768px) {
-  main.container .mobile-heading {
+  .mobile-heading {
     display: block;
   }
 }
@@ -9171,4 +9178,63 @@ main.container aside {
   .four-squares .four-squares-card::after {
     display: none;
   }
+}
+/*******************************************
+
+  FOCUS AREA
+
+********************************************/
+img.full-width {
+  height: 612px;
+  width: 100%;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+h1.focus-area {
+  font-weight: 400;
+  text-transform: none;
+  position: relative;
+  padding-left: 44px;
+  padding-bottom: 1em;
+}
+h1.focus-area::before {
+  content: url("/images/tag-icon.png");
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scale(0.5);
+}
+
+.focus-area-two-columns {
+  background-color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2rem;
+}
+.focus-area-two-columns ::after {
+  content: "";
+  background-color: lightblue;
+  width: 100%;
+  height: 20%;
+  position: absolute;
+  bottom: 0;
+}
+
+.focus-area-video {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  height: 0;
+  margin-bottom: 2em;
+}
+
+.focus-area-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 2em;
 }

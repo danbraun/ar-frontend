@@ -1,0 +1,118 @@
+/*******************************************
+
+  OUR GRANTMAKING
+
+********************************************/
+
+.four-squares {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 300px 300px;
+  gap: 1rem;
+
+  .four-squares-card {
+    padding: 2em;
+    overflow: hidden;
+    width: 300px;
+    height: 270px;
+    border: 8px red solid;
+    position: relative;
+    .title {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 1em;
+    }
+    .summary {
+      font-size: 12px;
+      margin-bottom: 1em;
+    }
+    a.learn-more {
+      color: red;
+      position: relative;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: blue;
+      &::after {
+        position: absolute;
+        right: 0;
+        display: block;
+        font-family: "Font Awesome 5 Free"; 
+        font-weight: 900;
+        content: "\f101";
+        font-size: 16px;
+        color: red;
+        bottom: -2px;
+        right: -18px;
+        transition: right 250ms ease-out;
+      }
+      &:hover::after {
+        right: -24px;
+      }
+    }
+  }
+  .four-squares-card::after {
+    position: absolute;
+    content: '';
+    width: 100px;
+    height: 100px;
+    background: red;
+    display: block;
+    border-radius: 50px;
+    // transition: transform 220ms ease-out;
+  }
+  .four-squares-card:hover::after {
+    // transform: scale(1.2);
+    animation: scaling 500ms ease-in-out 1;
+  }
+  @keyframes scaling {
+    0% {
+      transform: scale(1.0);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    to {
+      transform: scale(1.0);
+    }
+  }
+  .four-squares-card:nth-child(1) {
+    &::after {
+      bottom: -58px;
+      right: -58px;
+    }
+  }
+  .four-squares-card:nth-child(2) {
+    border-color: green;
+    &::after {
+      bottom: -58px;
+      left: -58px;
+      background: green;
+    }
+  }
+  .four-squares-card:nth-child(3) {
+    border-color: blue;
+    &::after {
+      top: -58px;
+      right: -58px;
+      background: blue;
+    }
+  }
+  .four-squares-card:nth-child(4) {
+    border-color: orange;
+    &::after {
+      top: -58px;
+      left: -58px;
+      background: orange;
+      
+    }
+    
+  }
+}
+@media (max-width: 768px) {
+  .four-squares {
+    grid-template-columns: 300px;
+    .four-squares-card::after {
+      display: none;
+    }
+  }
+}
